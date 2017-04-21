@@ -1,0 +1,29 @@
+<div class="content">
+  <nav>
+    <ul>
+      <li><a href="/feed">feed</a></li>
+      <li><a href="/profile">profile</a>
+    </ul>
+  </nav>
+
+  <div class="postDisplay">
+
+    <h1> <%= @user.fname.capitalize %> <%= @user.lname.capitalize %></h1>
+
+  </div>
+
+
+  <h3>Post History</h3>
+
+  <% @user.posts.each do |post| %>
+
+    <div class="postDisplay">
+
+      <%= post.title.upcase %>
+      <%= post.content %>
+
+    </div>
+
+  <% end %>
+
+</div>

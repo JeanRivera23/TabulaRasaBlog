@@ -3,16 +3,18 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/css?family=Caveat+Brush" rel="stylesheet">
     <title>Tabula Rasa</title>
   </head>
   <body>
-    <nav>
+    <div id="signInOut">
       <% if session[:user_id] %>
         <a href="/sign-out">Sign Out</a>
       <% else %>
         <a href="/">Sign In</a>
       <% end %>
-    </nav>
+    </div>
+
 
    <div class="flash-message">
       <% if flash[:notice] %>
@@ -23,8 +25,10 @@
 
 
 
+    <div id="centerContent">
+      <%= yield %>
+    </div>
 
-    <%= yield %>
 
 
 

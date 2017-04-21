@@ -1,34 +1,48 @@
-<div id="comment">
+<div class="content">
+  <nav>
+    <ul>
+      <li><a href="/profile">profile</a></li>
+    </ul>
+  </nav>
 
-<h3>Create Post</h3>
+  <div id="comment">
 
-<form action="/feed" method="post">
+  <h3>Create Post</h3>
 
-  <label for="">Title</label>
-  <input type="text" name="[post]title">
+  <form action="/feed" method="post">
 
-  <label for="">Content</label>
-  <input type="text" name="[post]content" maxlength="150">
+    <label for="">Title</label>
+    <input type="text" name="[post]title">
 
-  <button type="submit">submit</button>
+    <label for="">Content</label>
+    <input type="text" name="[post]content" maxlength="150">
 
-</form>
+    <button type="submit">submit</button>
+
+  </form>
 
 
-</div>
+  </div>
 
-<div class="feedDisplay">
+  <div class="feedDisplay">
 
-  <h1>Feed</h1>
+    <h1>Feed</h1>
 
-  <% @posts.reverse[0...10].each do |post| %>
+    <% @posts.reverse[0...10].each do |post| %>
 
-    <div class="postDisplay">
-      <h3> <%= post.user.fname.capitalize %> <%= post.user.lname.capitalize %></h3>
-      <%= post.title.upcase %>
-      <%= post.content %>
-    </div>
+      <div class="postDisplay">
 
-  <% end %>
+        <h3> <%= post.user.fname.capitalize %>
+        <%= post.user.lname.capitalize %></h3>
+
+        <%= post.title.capitalize %>
+        <%= post.content %>
+        <a href="/visit_profile/<%= post.user_id %>">visit profile</a>
+
+      </div>
+
+    <% end %>
+
+  </div>
 
 </div>

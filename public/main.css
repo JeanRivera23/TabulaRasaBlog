@@ -1,3 +1,10 @@
-/*body {
-  background-color: blue;
-}*/
+/*font-family: 'Caveat Brush', cursive;*/
+
+body {
+
+}
+
+.content {
+  position: relative;
+  top: 50px;
+}
