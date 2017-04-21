@@ -9,28 +9,26 @@ set :sessions, true
 
 
 get "/" do
-# User.create(fname: "Aphrodite", lname: "Alexopoulos", password: "12345")
+  # @post = Post.find_by(title: 'Please').destroy
   erb :sign_in
 end
 
 
-post "/sign_in" do
-  # puts params.inspect
+post "/" do
   @user = User.where(fname: params[:user][:fname]).first
 
   if @user.password == params[:user][:password]
     session[:user_id] = @user.id
 
-    flash[:notice] = "You have been signed in"
+    flash[:notice] = "Welcome!"
 
     redirect "/feed"
   else
-    flash[:notice] = "Your name and password do not match"
+    flash[:notice] = "Your name and password do not match."
 
     redirect "/"
   end
 end
-
 
 
 get "/sign_up" do
@@ -39,19 +37,25 @@ end
 
 
 post "/sign_up" do
-  # puts params.inspect
-  @user = User.create(fname: params[:user][:fname], lname: params[:user][:lname], password: params[:user][:password])
+  @user = User.create(fname: params[:user][:fname],
+  lname: params[:user][:lname],
+  password: params[:user][:password])
 
   redirect "/feed"
   end
-
 
 
 get "/feed" do
   @users = User.all
   @posts = Post.all
   erb :feed
-  # puts params.inspect
+end
+
+post "/feed" do
+  @post = Post.create(
+    title: params[:post][:title], content: params[:post][:content], user_id: session[:user_id]
+  )
+  redirect "/feed"
 end
 
 get "/profile" do

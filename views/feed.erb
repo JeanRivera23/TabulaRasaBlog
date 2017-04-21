@@ -1,1 +1,34 @@
-<h1>Feed</h1>
+<div id="comment">
+
+<h3>Create Post</h3>
+
+<form action="/feed" method="post">
+
+  <label for="">Title</label>
+  <input type="text" name="[post]title">
+
+  <label for="">Content</label>
+  <input type="text" name="[post]content">
+
+  <button type="submit">submit</button>
+
+</form>
+
+
+</div>
+
+<div class="feedDisplay">
+  <h1>Feed</h1>
+
+  <% @posts.each do |post| %>
+
+    <div class="postDisplay">
+      <h3> <%= post.user.fname.capitalize %></h3>
+      <%= post.user.lname.capitalize %>
+      <%= post.title.capitalize %>
+      <%= post.content %>
+    </div>
+
+  <% end %>
+
+</div>
