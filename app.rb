@@ -9,7 +9,7 @@ set :sessions, true
 
 
 get "/" do
-  # @post = Post.find_by(title: 'Please').destroy
+  # @post = Post.find_by(title: 'hey').destroy
   erb :sign_in
 end
 
@@ -41,6 +41,8 @@ post "/sign_up" do
   lname: params[:user][:lname],
   password: params[:user][:password])
 
+  session[:user_id] = @user.id
+
   redirect "/feed"
   end
 
@@ -54,6 +56,7 @@ end
 post "/feed" do
   @post = Post.create(
     title: params[:post][:title], content: params[:post][:content], user_id: session[:user_id]
+    # session[:user_id]
   )
   redirect "/feed"
 end

@@ -18,14 +18,14 @@
 </div>
 
 <div class="feedDisplay">
+
   <h1>Feed</h1>
 
-  <% @posts.each do |post| %>
+  <% @posts.reverse[0...10].each do |post| %>
 
     <div class="postDisplay">
-      <h3> <%= post.user.fname.capitalize %></h3>
-      <%= post.user.lname.capitalize %>
-      <%= post.title.capitalize %>
+      <h3> <%= post.user.fname.capitalize %> <%= post.user.lname.capitalize %></h3>
+      <%= post.title.upcase %>
       <%= post.content %>
     </div>
 
