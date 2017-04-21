@@ -56,14 +56,13 @@ end
 post "/feed" do
   @post = Post.create(
     title: params[:post][:title], content: params[:post][:content], user_id: session[:user_id]
-    # session[:user_id]
   )
   redirect "/feed"
 end
 
 get "/profile" do
-  @users = User.all
-  @posts = Post.all
+  @user = User.find(session[:user_id])
+  # @posts = Post.find_by(user_id: session[:user_id])
   erb :profile
 end
 

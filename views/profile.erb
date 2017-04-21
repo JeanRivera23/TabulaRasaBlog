@@ -1,3 +1,29 @@
+<div class="postDisplay">
 
-<h1><%= user.fname %> <%= user.lname %> Profile</h1>
+  <h1> <%= @user.fname.capitalize %> <%= @user.lname.capitalize %></h1>
+
+
+</div>
+
+<button type="button" name="button">edit</button>
+
+<button type="button" name="button">delete account</button>
+
+<h3>Post History</h3>
+
+<% @user.posts.each do |post| %>
+
+  <div class="postDisplay">
+
+    <%= post.title.upcase %>
+    <%= post.content %>
+
+    <!-- <form action="/profile" method="post">
+
+      <button type="button" name="button">edit</button>
+
+    </form> -->
+
+  </div>
+
 <% end %>
