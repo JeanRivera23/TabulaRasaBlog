@@ -1,10 +1,91 @@
-/*font-family: 'Caveat Brush', cursive;*/
-
+/*layout styling*/
 body {
-
+  background-image: url("/images/chalkboard_background.jpg");
+  font-family: 'Caveat Brush', cursive;
+  color: white;
 }
 
+/*centers content*/
 .content {
   position: relative;
-  top: 50px;
+  margin: auto;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  width: 500px;
+}
+
+h1 {
+  font-size: 40px;
+  width: 500px;
+  padding-bottom: 15px;
+  text-align: center;
+  border-bottom: 1px solid white;
+}
+
+h3  {
+  font-size: 30px;
+  margin-bottom: 15px;
+}
+
+p {
+  display: inline;
+  font-size: 20px;
+}
+
+span {
+  display: block;
+  padding-right: 10px;
+}
+
+/*this styles the landing page title Tabula Rasa*/
+#land {
+  font-size: 100px;
+  border: none;
+  text-align: center;
+}
+
+/*button style*/
+.btn {
+  background-color: white;
+  font-family: 'Caveat Brush', cursive;
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+  width: 70px;
+  height: 30px;
+  border-radius: 10px;
+}
+
+.btn2 {
+  background-color: white;
+  font-family: 'Caveat Brush', cursive;
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+  width: 150px;
+  height: 30px;
+  border-radius: 10px;
+}
+
+/*links*/
+a {
+  font-family: "Helvetica", sans-serif;
+  font-size: 10px;
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/*navigation*/
+nav a {
+  font-size: 15px;
+}
+
+nav li {
+  list-style-type: none;
 }

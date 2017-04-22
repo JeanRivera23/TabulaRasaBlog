@@ -7,9 +7,10 @@
 
   <div class="postDisplay">
 
-    <h1> <%= @user.fname.capitalize %> <%= @user.lname.capitalize %></h1>
+    <h1><%= @user.fname.capitalize %> <%= @user.lname.capitalize %></h1>
 
-    <button id="edit" type="button" name="button">edit account info</button>
+
+    <button class="btn2" id="edit" type="button" name="button">edit account info</button>
 
     <form id ="editForm" action="/profile" method="post">
 
@@ -22,7 +23,7 @@
       <label>Password</label>
       <input type="password" name="[user]password">
 
-      <input type="submit" value="edit">
+      <input class="btn" type="submit" value="edit">
 
     </form>
 
@@ -30,20 +31,23 @@
 
 
   <form action="/account_delete">
-      <input type="submit" value="delete account">
+      <input class="btn2" type="submit" value="delete account">
   </form>
 
-  <h3>Post History</h3>
 
-  <% @user.posts.each do |post| %>
+  <div class="postHistory">
 
-    <div class="postDisplay">
+    <h1>Post History</h1>
 
-      <%= post.title.upcase %>
-      <%= post.content %>
+    <% @user.posts.each do |post| %>
 
-    </div>
+      <div class="postDisplay">
 
-  <% end %>
+        <p id="pFeed"> <%= post.title.capitalize %> : <%= post.content %></p>
+
+      </div>
+
+    <% end %>
+  </div>
 
 </div>

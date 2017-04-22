@@ -7,11 +7,21 @@
     <title>Tabula Rasa</title>
   </head>
   <body>
+
     <div id="signInOut">
+
       <% if session[:user_id] %>
-        <a href="/sign-out">Sign Out</a>
+
+        <form action="/sign-out">
+          <input class="btn" type="submit" value="Sign out">
+        </form>
+
       <% else %>
-        <a href="/">Sign In</a>
+
+        <form action="/">
+          <input class="btn" type="submit" value="Sign in">
+        </form>
+
       <% end %>
     </div>
 
@@ -24,11 +34,7 @@
 
 
 
-
-    <div id="centerContent">
       <%= yield %>
-    </div>
-
 
 
 
