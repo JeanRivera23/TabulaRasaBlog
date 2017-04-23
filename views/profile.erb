@@ -1,0 +1,53 @@
+<div class="content">
+  <nav>
+    <ul>
+      <li><a href="/feed">feed</a></li>
+    </ul>
+  </nav>
+
+  <div class="postDisplay">
+
+    <h1><%= @user.fname.capitalize %> <%= @user.lname.capitalize %></h1>
+
+
+    <button class="btn2" id="edit" type="button" name="button">edit account info</button>
+
+    <form id ="editForm" action="/profile" method="post">
+
+      <label>First Name</label>
+      <input type="text" name="[user]fname">
+
+      <label>Last Name</label>
+      <input type="text" name="[user]lname">
+
+      <label>Password</label>
+      <input type="password" name="[user]password">
+
+      <input class="btn" type="submit" value="edit">
+
+    </form>
+
+  </div>
+
+
+  <form action="/account_delete">
+      <input class="btn2" type="submit" value="delete account">
+  </form>
+
+
+  <div class="postHistory">
+
+    <h1>Post History</h1>
+
+    <% @user.posts.each do |post| %>
+
+      <div class="postDisplay">
+
+        <p id="pFeed"> <%= post.title.capitalize %> : <%= post.content %></p>
+
+      </div>
+
+    <% end %>
+  </div>
+
+</div>
