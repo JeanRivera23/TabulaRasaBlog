@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!-- <h1>Feed</h1>
 
 <% @users.each do |user| %>
@@ -11,6 +12,8 @@
   <%= post.content %>
   <%= post.user.fname %>
 <% end %> -->
+=======
+>>>>>>> b302b2495902d24f8766047ed833ca15819eff6a
 <div id="comment">
 
 <h3>Create Post</h3>
@@ -34,7 +37,11 @@
 
   <h1>Feed</h1>
 
+<<<<<<< HEAD
   <% @posts[0...10].each do |post| %>
+=======
+  <% @posts.reverse[0...10].each do |post| %>
+>>>>>>> b302b2495902d24f8766047ed833ca15819eff6a
 
     <div class="postDisplay">
       <h3> <%= post.user.fname.capitalize %> <%= post.user.lname.capitalize %></h3>
